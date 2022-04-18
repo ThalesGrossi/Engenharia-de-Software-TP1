@@ -11,13 +11,13 @@ O objetivo do sistema é criar um fórum simples de perguntas e respostas para s
  - Thales Pantuzo Grossi - 
  - Tiago Rezende Valadares - 2016027562
 
-## Possíveis features
+## Features
  - Postar perguntas
  - Postar respostas
  - Votar na qualidade de uma pergunta ou resposta
  - Se cadastrar como usário
 
-## Possíveis tecnologias
+## Tecnologias
  - front: React.js
  - back: Django
  - BD: MySQL
