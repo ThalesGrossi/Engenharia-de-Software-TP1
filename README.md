@@ -8,7 +8,7 @@ O objetivo do sistema é criar um fórum simples de perguntas e respostas para s
 ## Integrantes
  - Luiz Augusto Facury de Souza - 2018072484
  - Silvio Natã Rocha Porto - 2018020603
- - Thales Pantuzo Grossi - 
+ - Thales Pantuzo Grossi - 2014129660
  - Tiago Rezende Valadares - 2016027562
 
 ## Features
