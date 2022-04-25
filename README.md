@@ -59,7 +59,7 @@ O objetivo do sistema é criar um fórum simples de perguntas e respostas para s
    
  - Como moderador, gostaria de deletar posts de outros usuários
  
-   - Implementar usuário especial moderador com botão de deletar condicional [Thales]
+   - Implementar usuário especial moderador com botão condicional de deletar posts [Thales]
    
  - Como usuário, gostaria de buscar um post por palavra-chave em pergunta ou resposta 
    - Projetar e testar interface web [Silvio]
