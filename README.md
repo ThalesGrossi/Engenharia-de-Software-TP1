@@ -18,7 +18,7 @@ O objetivo do sistema é criar um fórum simples de perguntas e respostas para s
  - Se cadastrar como usário
 
 ## Tecnologias
- - front: React.js
+ - front: Bootstrap
  - back: Django
  - BD: MySQL
 
