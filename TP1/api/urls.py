@@ -1,6 +1,13 @@
 from django.urls import path
-from .views import main 
+from . import views
+
+app_name = "usuario"
 
 urlpatterns = [
-    path('', main)
+    path('', views.home, name="Forum"),
+    path('forum/', views.home, name="Forum"),
+    path('registro/', views.formDeRegistro,name="Registro"),
+    path('login/', views.formDeLogin,name="Login"),
+    path('logout', views.formDeLogout, name="Logout"),
+    path('perfil/', views.perfil, name="Perfil")
 ]
