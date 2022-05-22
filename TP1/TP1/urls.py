@@ -16,9 +16,16 @@ Including another URLconf
 from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.urls import path, include
+from .views import home
+
+from accounts.views import login_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('api.urls')),
+    path('accounts/login/', login_view),
+    
+
 ]
+ 
  
