@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %} {% block title %}Thread {{post.id}}{% endblock %}
+
+{% block content %}
+
+<br />  
+
+<h1> {{post.title}} </h1>
+
+<small> Por: {{post.author.username}} </small> 
+<br />
+{{ post.description }} 
+
+<br />
+<hr>
+<br />
+
+
+{% endblock %}
