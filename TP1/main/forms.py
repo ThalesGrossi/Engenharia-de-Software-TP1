@@ -10,7 +10,6 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ["username", "email", "password1", "password2"]
 
-
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -19,9 +18,8 @@ class PostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-#        fields = ('author','description')
         fields = ["author","description"]
 
-    widgets = {
-        "author": forms.Select(attrs={'class':'form-control', 'value':'', 'type':'hidden','hidden':True})
-    }
+        widgets = {
+            'author': forms.TextInput(attrs={'value':'', 'type':'hidden'})
+        }
