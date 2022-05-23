@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %} {% block title %}Criar um Comentário{% endblock %} 
+
+{% block content %}
+
+<br/>
+<h1> Adicionar comentário </h1>
+<br/>
+
+<div class="form_group">
+<form method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" class="btn btn-success">Comentar</button>
+</form>
+</div>
+
+<script>
+  var name = "{{ user.id }}"
+  document.getElementById("id_author").value = name;
+</script>
+{% endblock %}
+

@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from .forms import RegisterForm, PostForm
+from django.urls import reverse_lazy
+from .forms import RegisterForm, PostForm, CommentForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User, Group
-from .models import Post, Reply
-from django.views.generic import ListView, DetailView 
+from .models import Post, Comment
+from django.views.generic import ListView, DetailView, CreateView
 
 @login_required(login_url="/login")
 def home(request):
@@ -72,3 +73,11 @@ class ArticleDetailView(DetailView):
     model = Post
     template_name = 'main/thread.html'
 
+class AddCommentView(CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'main/create_comment.html'
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)

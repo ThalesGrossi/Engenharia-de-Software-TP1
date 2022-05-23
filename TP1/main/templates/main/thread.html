@@ -4,6 +4,12 @@
 
 <br />  
 
+<a href="../home" class="btn btn-secondary">
+    Volta ao Forum
+</a>
+
+<br />  
+
 <h1> {{post.title}} </h1>
 
 <small> Por: {{post.author.username}} </small> 
@@ -11,8 +17,28 @@
 {{ post.description }} 
 
 <br />
-<hr>
 <br />
 
+<h2> Respostas </h2>
+
+{% if not post.comments.all %} 
+    Sem comentários ainda.. 
+    <br />
+    <a href="{% url 'create_comment' post.pk %}"> Adicionar Comentário </a>  
+
+{% else %}
+
+    <a href="{% url 'create_comment' post.pk %}"> Adicionar Comentário </a>  
+    <br />
+
+    {% for comment in post.comments.all %}
+
+    <strong> {{ comment.author }} - {{ comment.created_at }} </strong>
+    <br/>
+    {{comment.description}}
+    <hr>
+    {% endfor %}
+
+{% endif %}
 
 {% endblock %}
