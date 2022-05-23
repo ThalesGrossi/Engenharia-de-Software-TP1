@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User, Group
 from .models import Post
+from django.db.models import Q
 
 
 @login_required(login_url="/login")
@@ -32,8 +33,11 @@ def home(request):
                     group.user_set.remove(user)
                 except:
                     pass
+    
+    search = request.GET.get('search', '')
+    posts_search = posts.filter(Q(title__icontains = search) | Q(description__icontains = search))
 
-    return render(request, 'main/home.html', {"posts": posts})
+    return render(request, 'main/home.html', {"posts": posts_search})
 
 
 @login_required(login_url="/login")
