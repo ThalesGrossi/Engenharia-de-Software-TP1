@@ -103,6 +103,5 @@ def LikeView(request, pk):
     #user = request.user
     #if user in post.likes.all():
     #    post.likes.remove(user)
-    #else:
     post.likes.add(request.user)
     return HttpResponseRedirect(reverse('thread', args=[str(pk)]))
