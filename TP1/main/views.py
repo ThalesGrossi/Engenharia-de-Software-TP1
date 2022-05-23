@@ -96,12 +96,20 @@ class AddCommentView(CreateView):
         form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super(ArticleDetailView, self).get_context_data(**kwargs)
+        ph = get_object_or_404(Post, id=self.kwargs['pk'])
+        total_likes = ph.total_likes()
+        context['total_likes']=  total_likes
+        return context
 
 
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    #user = request.user
-    #if user in post.likes.all():
-    #    post.likes.remove(user)
     post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('thread', args=[str(pk)]))
+
+def LikeViewC(request, pk):
+    comment = get_object_or_404(Comment, id=request.POST.get('post_id'))
+    comment.likesc.add(request.user)
     return HttpResponseRedirect(reverse('thread', args=[str(pk)]))

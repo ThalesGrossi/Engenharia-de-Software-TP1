@@ -23,6 +23,7 @@ class Comment(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    likesc = models.ManyToManyField(User, related_name='comment_posts')
 
     def __str__(self):
         return '%s - %s' % (self.title, self.description)
@@ -30,3 +31,5 @@ class Comment(models.Model):
     def get_absolute_url(self):
         return reverse("thread", kwargs={"pk": self.post_id})
     
+    def total_likesc(self):
+        return self.likesc.count()
