@@ -7,7 +7,17 @@
       <h5 class="card-title">{{post.title}}</h5>
       <p>{{post.description}}</p>
     </div>
-    <div>
+      <div>
+      <a href="{% url 'thread' post.pk %}">
+      <button
+          type="button"
+          class="btn btn-info"
+          name="view-Thread"
+          value="{{post.id}}">
+        
+          Ver Thread
+        </button>
+      </a>
       {% if user == post.author or perms.main.delete_post %}
       <form method="post">
         {% csrf_token %}
@@ -17,7 +27,7 @@
           name="post-id"
           value="{{post.id}}"
         >
-          Delete
+          Deletar
         </button>
       </form>
       {% endif %}
@@ -30,7 +40,7 @@
           name="user-id"
           value="{{post.author.id}}"
         >
-          Ban User
+          Banir Usuário
         </button>
       </form>
       {% endif %}
@@ -39,5 +49,5 @@
   <div class="card-footer text-muted">{{post.created_at}}</div>
 </div>
 {% empty %}
-<p>No posts yet :(</p>
+<p>Sem posts ainda</p>
 {% endfor %} {% endblock %}

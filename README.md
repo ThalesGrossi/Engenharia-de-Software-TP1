@@ -15,12 +15,12 @@ O objetivo do sistema é criar um fórum simples de perguntas e respostas para s
  - Postar perguntas
  - Postar respostas
  - Votar na qualidade de uma pergunta ou resposta
- - Se cadastrar como usário
+ - Se cadastrar como usuário
 
 ## Tecnologias
  - front: Bootstrap
  - back: Django
- - BD: MySQL
+ - BD: PostgreSQL
 
 ## Histórias de Usuário
  - Como usuário normal, gostaria de postar pergunta no fórum
