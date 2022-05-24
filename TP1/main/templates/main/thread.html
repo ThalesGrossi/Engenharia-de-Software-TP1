@@ -36,9 +36,22 @@
     <strong> {{ comment.author }} - {{ comment.created_at }} </strong>
     <br/>
     {{comment.description}}
+    <br/>
+    <form action="{% url 'comment_post' post.pk %}"
+    method="POST">
+        {% csrf_token %}
+        <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> - {{ total_likesc }} Likes
+    </form>
     <hr>
     {% endfor %}
 
 {% endif %}
+
+<br/>
+<form action="{% url 'like_post' post.pk %}"
+method="POST">
+    {% csrf_token %}
+    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> - {{ total_likes }} Likes
+</form>
 
 {% endblock %}
