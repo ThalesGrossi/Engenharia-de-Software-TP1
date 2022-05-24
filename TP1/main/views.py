@@ -7,7 +7,7 @@ from django.contrib.auth.models import User, Group
 from .models import Post, Comment
 from django.db.models import Q
 
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 @login_required(login_url="/login")
 def home(request):
@@ -86,3 +86,8 @@ class AddCommentView(CreateView):
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
+
+class UpdatePostView(UpdateView):
+    model = Post
+    template_name = 'main/edit_post.html'
+    fields = ["title","description"]    

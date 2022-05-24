@@ -12,6 +12,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title + "\n" + self.description
 
+    def get_absolute_url(self):
+        return reverse('home')
+
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)

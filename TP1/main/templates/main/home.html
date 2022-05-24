@@ -31,18 +31,17 @@
         </button>
       </form>
       {% endif %}
-      {% if user.is_staff %}
-      <form method="post">
-        {% csrf_token %}
+      {% if user.is_staff or user == post.author%}
+      <a href="{% url 'edit_post' post.pk %}">
         <button
-          type="submit"
-          class="btn btn-warning"
-          name="user-id"
-          value="{{post.author.id}}"
-        >
-          Banir Usuário
-        </button>
-      </form>
+            type="button"
+            class="btn btn-warning"
+            name="view-Thread"
+            value="{{post.id}}">
+          
+            Editar Post
+          </button>
+        </a>
       {% endif %}
     </div>
   </div>
