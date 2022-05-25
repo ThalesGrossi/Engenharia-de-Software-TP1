@@ -14,7 +14,7 @@ O objetivo do sistema é criar um fórum simples de perguntas e respostas para s
 ## Features
  - Postar perguntas
  - Postar respostas
- - Votar na qualidade de uma pergunta ou resposta
+ - Votar na qualidade de uma pergunta
  - Se cadastrar como usuário
 
 ## Tecnologias
@@ -42,13 +42,6 @@ O objetivo do sistema é criar um fórum simples de perguntas e respostas para s
    - Implementar interface web 
    - Criar e testar validação e senha 
    - Criar e testar recuperação e mudança de senha 
-   
- - Como usuário normal, gostaria de votar na qualidade da resposta
- 
-   - Projetar e testar interface web 
-   - Implementar interface web 
-   - Criar e testar contador de votos para cada pergunta e resposta 
-   - Criar classificador das perguntas e respostas 
    
  - Como usuário normal, gostaria de apagar e editar meu próprio post
  

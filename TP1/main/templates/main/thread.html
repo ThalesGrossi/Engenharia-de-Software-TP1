@@ -37,11 +37,6 @@
     <br/>
     {{comment.description}}
     <br/>
-    <form action="{% url 'comment_post' post.pk %}"
-    method="POST">
-        {% csrf_token %}
-        <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> - {{ total_likesc }} Likes
-    </form>
     <hr>
     {% endfor %}
 
